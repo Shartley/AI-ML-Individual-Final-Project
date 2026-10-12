@@ -1,0 +1,51 @@
+message,true,keyword_pred,naive_bayes_pred,logistic_regression_pred
+Where can I learn about joining a campus club?,Other,Other,Other,Other
+I have a question about changing my major.,Academic,Academic,Academic,Academic
+Where do I ask about my scholarship payment?,Financial Aid,Financial Aid,Financial Aid,Financial Aid
+There is a problem with my FAFSA.,Financial Aid,Financial Aid,Financial Aid,Financial Aid
+I have a question about a prerequisite override.,Academic,Academic,Academic,Academic
+Where can I get help with two factor authentication?,Technology,Technology,Technology,Technology
+Who handles questions about campus dining options?,Other,Other,Other,Other
+Can someone review my FAFSA?,Financial Aid,Financial Aid,Financial Aid,Financial Aid
+Which office handles the recreation center?,Other,Other,Other,Other
+Where do I ask about work study funding?,Financial Aid,Financial Aid,Financial Aid,Financial Aid
+Where do I ask about my tuition bill?,Financial Aid,Financial Aid,Financial Aid,Financial Aid
+Can someone review my aid package?,Financial Aid,Financial Aid,Financial Aid,Financial Aid
+I need technical support for two factor authentication.,Technology,Technology,Technology,Technology
+I need assistance with graduation requirements.,Academic,Other,Academic,Academic
+Who fixes issues with two factor authentication?,Technology,Technology,Technology,Technology
+Who can explain financial aid verification?,Financial Aid,Financial Aid,Financial Aid,Financial Aid
+Where do I request help with campus maintenance?,Housing/Facilities,Housing/Facilities,Housing/Facilities,Housing/Facilities
+There is a problem with mold in my room.,Housing/Facilities,Housing/Facilities,Housing/Facilities,Housing/Facilities
+Where do I request help with a broken hallway light?,Housing/Facilities,Housing/Facilities,Housing/Facilities,Housing/Facilities
+Could someone explain a prerequisite override?,Academic,Academic,Academic,Academic
+Who handles questions about getting a student ID?,Other,Other,Other,Other
+I need information on a campus tour.,Other,Other,Other,Other
+Who fixes issues with printing from my computer?,Technology,Technology,Technology,Technology
+Where should I go to discuss a prerequisite override?,Academic,Academic,Academic,Academic
+Where do I request help with mold in my room?,Housing/Facilities,Housing/Facilities,Housing/Facilities,Housing/Facilities
+Can you tell me about student events?,Other,Other,Other,Other
+I need assistance with changing my major.,Academic,Academic,Academic,Academic
+Where should I go to discuss an incomplete grade?,Academic,Academic,Academic,Academic
+Where should I go to discuss course registration?,Academic,Academic,Academic,Academic
+I need to report my room assignment.,Housing/Facilities,Housing/Facilities,Housing/Facilities,Housing/Facilities
+I need information on getting a student ID.,Other,Other,Other,Other
+Who handles questions about a lost item?,Other,Other,Other,Other
+Who fixes issues with my account being locked?,Technology,Other,Technology,Technology
+Who fixes issues with connecting to campus Wi-Fi?,Technology,Technology,Technology,Technology
+I need technical support for my campus password.,Technology,Technology,Technology,Technology
+I need information on the recreation center.,Other,Other,Other,Other
+There is a problem with a leaking dorm sink.,Housing/Facilities,Housing/Facilities,Housing/Facilities,Housing/Facilities
+Who fixes issues with the student portal?,Technology,Technology,Technology,Technology
+Who can fix mold in my room?,Housing/Facilities,Housing/Facilities,Housing/Facilities,Housing/Facilities
+I need help understanding my grant award.,Financial Aid,Financial Aid,Financial Aid,Financial Aid
+I cannot access printing from my computer.,Technology,Technology,Technology,Technology
+Where can I get help with my account being locked?,Technology,Other,Technology,Technology
+Which office handles getting a student ID?,Other,Other,Other,Other
+I need help understanding my FAFSA.,Financial Aid,Financial Aid,Financial Aid,Financial Aid
+I need to report a broken hallway light.,Housing/Facilities,Housing/Facilities,Housing/Facilities,Housing/Facilities
+Can someone review an unexpected account balance?,Financial Aid,Financial Aid,Financial Aid,Financial Aid
+I have a question about course registration.,Academic,Academic,Academic,Academic
+Can someone look into the elevator in my dorm?,Housing/Facilities,Housing/Facilities,Housing/Facilities,Housing/Facilities
+Who can fix my dorm air conditioner?,Housing/Facilities,Housing/Facilities,Housing/Facilities,Housing/Facilities
+Who can help me with my academic advisor?,Academic,Academic,Academic,Academic

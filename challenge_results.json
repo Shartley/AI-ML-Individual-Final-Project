@@ -1,0 +1,647 @@
+{
+  "dataset": "challenge_student_messages.csv",
+  "dataset_origin": "60 newly authored hypothetical prompts with subjective primary-office labels; never used in training or tuning",
+  "n": 60,
+  "labels": [
+    "Academic",
+    "Technology",
+    "Financial Aid",
+    "Housing/Facilities",
+    "Other"
+  ],
+  "training_data": "synthetic_student_messages.csv (200 training/50 test split random_state=42)",
+  "results": {
+    "Keyword baseline": {
+      "accuracy": 0.6,
+      "macro_f1": 0.6084,
+      "n_correct": 36,
+      "confusion_matrix": [
+        [
+          5,
+          0,
+          0,
+          0,
+          7
+        ],
+        [
+          1,
+          5,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          10,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          4,
+          7
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          12
+        ]
+      ],
+      "errors": [
+        {
+          "message": "im tryna switch from bio to comp sci who signs off",
+          "expected": "Academic",
+          "predicted": "Other"
+        },
+        {
+          "message": "I missed the add/drop cutoff; who handles an exception?",
+          "expected": "Academic",
+          "predicted": "Other"
+        },
+        {
+          "message": "Which prereqs do I need before capstone?",
+          "expected": "Academic",
+          "predicted": "Other"
+        },
+        {
+          "message": "registration says hold but I already met my adviser",
+          "expected": "Academic",
+          "predicted": "Other"
+        },
+        {
+          "message": "Can I enroll in two sections at the same time?",
+          "expected": "Academic",
+          "predicted": "Other"
+        },
+        {
+          "message": "How many credits left til I graduate fr",
+          "expected": "Academic",
+          "predicted": "Other"
+        },
+        {
+          "message": "Do I talk to someone about changing my program of study",
+          "expected": "Academic",
+          "predicted": "Other"
+        },
+        {
+          "message": "2fa code never comes through to my phone",
+          "expected": "Technology",
+          "predicted": "Other"
+        },
+        {
+          "message": "my school mail keeps bouncing messages back",
+          "expected": "Technology",
+          "predicted": "Other"
+        },
+        {
+          "message": "bruh the campus app keeps crashing at sign in",
+          "expected": "Technology",
+          "predicted": "Other"
+        },
+        {
+          "message": "The lecture site freezes whenever I submit a file",
+          "expected": "Technology",
+          "predicted": "Other"
+        },
+        {
+          "message": "I cannot connect my tablet to eduroam",
+          "expected": "Technology",
+          "predicted": "Other"
+        },
+        {
+          "message": "My transcript PDF cannot download from the student system",
+          "expected": "Technology",
+          "predicted": "Academic"
+        },
+        {
+          "message": "I got locked out of the lab workstation",
+          "expected": "Technology",
+          "predicted": "Other"
+        },
+        {
+          "message": "my pell disappeared off my bill what happened",
+          "expected": "Financial Aid",
+          "predicted": "Other"
+        },
+        {
+          "message": "my workstudy earnings dont match what i was told",
+          "expected": "Financial Aid",
+          "predicted": "Other"
+        },
+        {
+          "message": "there is water coming through my ceiling rn",
+          "expected": "Housing/Facilities",
+          "predicted": "Other"
+        },
+        {
+          "message": "the heater in our suite broke again",
+          "expected": "Housing/Facilities",
+          "predicted": "Other"
+        },
+        {
+          "message": "the laundry machines on floor 4 ate my quarters",
+          "expected": "Housing/Facilities",
+          "predicted": "Other"
+        },
+        {
+          "message": "There is a smell coming from the bathroom vent",
+          "expected": "Housing/Facilities",
+          "predicted": "Other"
+        },
+        {
+          "message": "Can someone repair the door lock in my hall?",
+          "expected": "Housing/Facilities",
+          "predicted": "Other"
+        },
+        {
+          "message": "How do I report a flooded stairwell",
+          "expected": "Housing/Facilities",
+          "predicted": "Other"
+        },
+        {
+          "message": "I need wifi fixed in my dorm room",
+          "expected": "Housing/Facilities",
+          "predicted": "Technology"
+        },
+        {
+          "message": "room key stopped opening my building",
+          "expected": "Housing/Facilities",
+          "predicted": "Other"
+        }
+      ],
+      "per_class": {
+        "Academic": {
+          "precision": 0.8333333333333334,
+          "recall": 0.4166666666666667,
+          "f1-score": 0.5555555555555556,
+          "support": 12.0
+        },
+        "Financial Aid": {
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "f1-score": 0.9090909090909091,
+          "support": 12.0
+        },
+        "Housing/Facilities": {
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1-score": 0.5,
+          "support": 12.0
+        },
+        "Other": {
+          "precision": 0.35294117647058826,
+          "recall": 1.0,
+          "f1-score": 0.5217391304347826,
+          "support": 12.0
+        },
+        "Technology": {
+          "precision": 0.8333333333333334,
+          "recall": 0.4166666666666667,
+          "f1-score": 0.5555555555555556,
+          "support": 12.0
+        },
+        "accuracy": 0.6,
+        "macro avg": {
+          "precision": 0.803921568627451,
+          "recall": 0.5999999999999999,
+          "f1-score": 0.6083882301273607,
+          "support": 60.0
+        },
+        "weighted avg": {
+          "precision": 0.803921568627451,
+          "recall": 0.6,
+          "f1-score": 0.6083882301273605,
+          "support": 60.0
+        }
+      }
+    },
+    "Multinomial Naive Bayes": {
+      "accuracy": 0.6,
+      "macro_f1": 0.5841,
+      "n_correct": 36,
+      "confusion_matrix": [
+        [
+          5,
+          2,
+          1,
+          2,
+          2
+        ],
+        [
+          0,
+          6,
+          2,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          11,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          10,
+          1
+        ],
+        [
+          0,
+          3,
+          1,
+          4,
+          4
+        ]
+      ],
+      "errors": [
+        {
+          "message": "im tryna switch from bio to comp sci who signs off",
+          "expected": "Academic",
+          "predicted": "Technology"
+        },
+        {
+          "message": "I missed the add/drop cutoff; who handles an exception?",
+          "expected": "Academic",
+          "predicted": "Other"
+        },
+        {
+          "message": "Where do I appeal a grade that seems wrong?",
+          "expected": "Academic",
+          "predicted": "Financial Aid"
+        },
+        {
+          "message": "Which prereqs do I need before capstone?",
+          "expected": "Academic",
+          "predicted": "Other"
+        },
+        {
+          "message": "Can I enroll in two sections at the same time?",
+          "expected": "Academic",
+          "predicted": "Housing/Facilities"
+        },
+        {
+          "message": "Need signoff for a course substitution ASAP",
+          "expected": "Academic",
+          "predicted": "Technology"
+        },
+        {
+          "message": "My timetable has a class clash; can somebody fix it?",
+          "expected": "Academic",
+          "predicted": "Housing/Facilities"
+        },
+        {
+          "message": "wifi keeps kickin me off in the library",
+          "expected": "Technology",
+          "predicted": "Housing/Facilities"
+        },
+        {
+          "message": "2fa code never comes through to my phone",
+          "expected": "Technology",
+          "predicted": "Housing/Facilities"
+        },
+        {
+          "message": "my school mail keeps bouncing messages back",
+          "expected": "Technology",
+          "predicted": "Financial Aid"
+        },
+        {
+          "message": "bruh the campus app keeps crashing at sign in",
+          "expected": "Technology",
+          "predicted": "Housing/Facilities"
+        },
+        {
+          "message": "is there someone who can fix a broken laptop loaner",
+          "expected": "Technology",
+          "predicted": "Housing/Facilities"
+        },
+        {
+          "message": "printer takes my money but wont print anything",
+          "expected": "Technology",
+          "predicted": "Financial Aid"
+        },
+        {
+          "message": "who handles missing outside scholarship checks",
+          "expected": "Financial Aid",
+          "predicted": "Other"
+        },
+        {
+          "message": "there is water coming through my ceiling rn",
+          "expected": "Housing/Facilities",
+          "predicted": "Financial Aid"
+        },
+        {
+          "message": "the laundry machines on floor 4 ate my quarters",
+          "expected": "Housing/Facilities",
+          "predicted": "Other"
+        },
+        {
+          "message": "where do i pick up a replacement student id",
+          "expected": "Other",
+          "predicted": "Financial Aid"
+        },
+        {
+          "message": "is there a shuttle to the stadium tomorrow",
+          "expected": "Other",
+          "predicted": "Housing/Facilities"
+        },
+        {
+          "message": "how do i register a campus event",
+          "expected": "Other",
+          "predicted": "Housing/Facilities"
+        },
+        {
+          "message": "what hours is the dining hall serving breakfast",
+          "expected": "Other",
+          "predicted": "Housing/Facilities"
+        },
+        {
+          "message": "can i reserve a room for a student organization",
+          "expected": "Other",
+          "predicted": "Technology"
+        },
+        {
+          "message": "who gives permission for a bake sale outside",
+          "expected": "Other",
+          "predicted": "Technology"
+        },
+        {
+          "message": "how do i join the student government",
+          "expected": "Other",
+          "predicted": "Technology"
+        },
+        {
+          "message": "Need directions to the wellness center",
+          "expected": "Other",
+          "predicted": "Housing/Facilities"
+        }
+      ],
+      "per_class": {
+        "Academic": {
+          "precision": 1.0,
+          "recall": 0.4166666666666667,
+          "f1-score": 0.5882352941176471,
+          "support": 12.0
+        },
+        "Financial Aid": {
+          "precision": 0.6875,
+          "recall": 0.9166666666666666,
+          "f1-score": 0.7857142857142857,
+          "support": 12.0
+        },
+        "Housing/Facilities": {
+          "precision": 0.5,
+          "recall": 0.8333333333333334,
+          "f1-score": 0.625,
+          "support": 12.0
+        },
+        "Other": {
+          "precision": 0.5,
+          "recall": 0.3333333333333333,
+          "f1-score": 0.4,
+          "support": 12.0
+        },
+        "Technology": {
+          "precision": 0.5454545454545454,
+          "recall": 0.5,
+          "f1-score": 0.5217391304347826,
+          "support": 12.0
+        },
+        "accuracy": 0.6,
+        "macro avg": {
+          "precision": 0.6465909090909091,
+          "recall": 0.6,
+          "f1-score": 0.5841377420533431,
+          "support": 60.0
+        },
+        "weighted avg": {
+          "precision": 0.6465909090909091,
+          "recall": 0.6,
+          "f1-score": 0.5841377420533431,
+          "support": 60.0
+        }
+      }
+    },
+    "Logistic Regression": {
+      "accuracy": 0.5833,
+      "macro_f1": 0.5621,
+      "n_correct": 35,
+      "confusion_matrix": [
+        [
+          4,
+          3,
+          1,
+          2,
+          2
+        ],
+        [
+          0,
+          6,
+          2,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          11,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          10,
+          1
+        ],
+        [
+          0,
+          3,
+          1,
+          4,
+          4
+        ]
+      ],
+      "errors": [
+        {
+          "message": "im tryna switch from bio to comp sci who signs off",
+          "expected": "Academic",
+          "predicted": "Technology"
+        },
+        {
+          "message": "I missed the add/drop cutoff; who handles an exception?",
+          "expected": "Academic",
+          "predicted": "Other"
+        },
+        {
+          "message": "Where do I appeal a grade that seems wrong?",
+          "expected": "Academic",
+          "predicted": "Financial Aid"
+        },
+        {
+          "message": "Which prereqs do I need before capstone?",
+          "expected": "Academic",
+          "predicted": "Other"
+        },
+        {
+          "message": "Can I enroll in two sections at the same time?",
+          "expected": "Academic",
+          "predicted": "Housing/Facilities"
+        },
+        {
+          "message": "How many credits left til I graduate fr",
+          "expected": "Academic",
+          "predicted": "Technology"
+        },
+        {
+          "message": "Need signoff for a course substitution ASAP",
+          "expected": "Academic",
+          "predicted": "Technology"
+        },
+        {
+          "message": "My timetable has a class clash; can somebody fix it?",
+          "expected": "Academic",
+          "predicted": "Housing/Facilities"
+        },
+        {
+          "message": "wifi keeps kickin me off in the library",
+          "expected": "Technology",
+          "predicted": "Housing/Facilities"
+        },
+        {
+          "message": "2fa code never comes through to my phone",
+          "expected": "Technology",
+          "predicted": "Housing/Facilities"
+        },
+        {
+          "message": "my school mail keeps bouncing messages back",
+          "expected": "Technology",
+          "predicted": "Financial Aid"
+        },
+        {
+          "message": "bruh the campus app keeps crashing at sign in",
+          "expected": "Technology",
+          "predicted": "Housing/Facilities"
+        },
+        {
+          "message": "is there someone who can fix a broken laptop loaner",
+          "expected": "Technology",
+          "predicted": "Housing/Facilities"
+        },
+        {
+          "message": "printer takes my money but wont print anything",
+          "expected": "Technology",
+          "predicted": "Financial Aid"
+        },
+        {
+          "message": "who handles missing outside scholarship checks",
+          "expected": "Financial Aid",
+          "predicted": "Other"
+        },
+        {
+          "message": "there is water coming through my ceiling rn",
+          "expected": "Housing/Facilities",
+          "predicted": "Financial Aid"
+        },
+        {
+          "message": "the laundry machines on floor 4 ate my quarters",
+          "expected": "Housing/Facilities",
+          "predicted": "Other"
+        },
+        {
+          "message": "where do i pick up a replacement student id",
+          "expected": "Other",
+          "predicted": "Financial Aid"
+        },
+        {
+          "message": "is there a shuttle to the stadium tomorrow",
+          "expected": "Other",
+          "predicted": "Housing/Facilities"
+        },
+        {
+          "message": "how do i register a campus event",
+          "expected": "Other",
+          "predicted": "Housing/Facilities"
+        },
+        {
+          "message": "what hours is the dining hall serving breakfast",
+          "expected": "Other",
+          "predicted": "Housing/Facilities"
+        },
+        {
+          "message": "can i reserve a room for a student organization",
+          "expected": "Other",
+          "predicted": "Technology"
+        },
+        {
+          "message": "who gives permission for a bake sale outside",
+          "expected": "Other",
+          "predicted": "Technology"
+        },
+        {
+          "message": "how do i join the student government",
+          "expected": "Other",
+          "predicted": "Technology"
+        },
+        {
+          "message": "Need directions to the wellness center",
+          "expected": "Other",
+          "predicted": "Housing/Facilities"
+        }
+      ],
+      "per_class": {
+        "Academic": {
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1-score": 0.5,
+          "support": 12.0
+        },
+        "Financial Aid": {
+          "precision": 0.6875,
+          "recall": 0.9166666666666666,
+          "f1-score": 0.7857142857142857,
+          "support": 12.0
+        },
+        "Housing/Facilities": {
+          "precision": 0.5,
+          "recall": 0.8333333333333334,
+          "f1-score": 0.625,
+          "support": 12.0
+        },
+        "Other": {
+          "precision": 0.5,
+          "recall": 0.3333333333333333,
+          "f1-score": 0.4,
+          "support": 12.0
+        },
+        "Technology": {
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1-score": 0.5,
+          "support": 12.0
+        },
+        "accuracy": 0.5833333333333334,
+        "macro avg": {
+          "precision": 0.6375,
+          "recall": 0.5833333333333334,
+          "f1-score": 0.562142857142857,
+          "support": 60.0
+        },
+        "weighted avg": {
+          "precision": 0.6375,
+          "recall": 0.5833333333333334,
+          "f1-score": 0.5621428571428572,
+          "support": 60.0
+        }
+      }
+    }
+  }
+}

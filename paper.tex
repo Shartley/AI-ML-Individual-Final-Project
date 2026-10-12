@@ -1,0 +1,59 @@
+\documentclass[sigconf,anonymous]{acmart}
+\settopmatter{printacmref=false}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\pagestyle{plain}
+\acmConference[ACMSE '27]{ACM Southeast Conference}{April 15--17, 2027}{Decatur, Alabama, USA}
+\acmYear{2027}
+\acmISBN{}
+\begin{document}
+\title{CampusHelp AI: A Reproducible Synthetic-Data Pilot for Routing Student Support Questions}
+\begin{abstract}
+Students may be unsure which office to contact for help. This pilot studies whether short student questions can be assigned to five support categories using lightweight text classification. A templated training dataset contains 250 artificial messages. On a stratified 50-example holdout, a keyword baseline attained 94\% accuracy while TF--IDF with Naive Bayes and Logistic Regression each attained 100\%. On an independent, manually authored 60-question challenge set, accuracies fell to 60\%, 60\%, and 58.3\%, respectively. A local Gradio demonstrator translates predicted categories into generic office suggestions and flags low-confidence results. The divergence reveals weak transfer across synthetic writing styles; neither dataset measures real student performance.
+\end{abstract}
+\begin{CCSXML}
+<ccs2012><concept><concept_id>10010147.10010257.10010293</concept_id><concept_desc>Computing methodologies~Machine learning approaches</concept_desc><concept_significance>300</concept_significance></concept></ccs2012>
+\end{CCSXML}
+\ccsdesc[300]{Computing methodologies~Machine learning approaches}
+\keywords{Student support, Intent classification, Text classification, Synthetic data}
+\maketitle
+\section{Introduction}
+University support requests involve academic advising, technology, financial aid, housing and other campus services. Misrouted requests may delay assistance. Our question is: \emph{How do three lightweight classifiers perform on templated synthetic questions versus independently worded, hypothetical student requests?} We implement a deterministic data generator, fixed-split evaluation, three routing methods and a local prototype. The contribution is the application-specific comparison and integrated demonstrator, \emph{not} the invention of Naive Bayes, Logistic Regression, TF--IDF or Gradio. This is supervised multiclass intent classification, not a deployed campus service.
+\section{Related Work}
+Larson et al.\ \cite{larson2019} examined intent classification alongside out-of-scope detection in the CLINC150 dataset and found out-of-scope recognition challenging. Their broader, crowdsourced benchmark motivates caution when evaluating our closed-set, synthetic labels. Joulin et al.\ \cite{joulin2017} showed that efficient shallow models can remain competitive for text classification, motivating lightweight methods rather than an expensive transformer. Zhang et al.\ \cite{zhang2015} explored character-level convolutional alternatives using large-scale datasets; our deliberately smaller experiment does not claim to establish a preferred model across domains. These studies did not evaluate our newly generated campus-routing messages.
+\section{Methodology}
+We generated 250 templated questions, 50 each for Academic, Technology, Financial Aid, Housing/Facilities, and Other. Each category combined 10 subject strings with five sentence templates. No student records were collected. Generator seed 42 shuffled examples; a stratified 80/20 split (\texttt{random\_state=42}) produced 200 training and 50 test records. The baseline counted matching category keywords and defaulted to Other when none matched. For the two learned models, word unigram/bigram TF--IDF features were fitted \emph{only on training data} within scikit-learn pipelines; classifiers were Multinomial Naive Bayes (defaults) and Logistic Regression (\texttt{max\_iter=2000}, seed 42). No pretrained model or fine-tuning was used. All methods used identical held-out records. We then authored a separate 60-question challenge set (12 per category) featuring novel wording, slang, and some cross-office ambiguity. These prompts were not used to train or tune any classifier, and primary-office labels were assigned during dataset construction by a single annotator, without independent adjudication. Accuracy measures correct classifications; macro-F1 averages per-class F1 equally. Training and testing ran locally with Python and scikit-learn 1.8.0 on CPU. The Gradio interface provides office descriptions and an adjustable low-probability review flag, but no directory integrations. No human participants were recruited or tested, and no IRB determination was sought for the synthetic-only implementation. Sentence-frame similarity across the original split and subjective challenge labels are major limitations.
+\section{Results}
+\begin{table}[t]
+\centering
+\caption{Accuracy and macro-F1 for the templated holdout ($n=50$) and independently written challenge set ($n=60$). The same models were used for both evaluations.}
+\label{tab:results}
+\begin{tabular}{lrrrr}
+\toprule
+& \multicolumn{2}{c}{Holdout} & \multicolumn{2}{c}{Challenge} \\
+Method & Acc. & F1 & Acc. & F1 \\
+\midrule
+Keyword baseline & .940 & .941 & .600 & .608 \\
+TF--IDF + Naive Bayes & 1.000 & 1.000 & .600 & .584 \\
+TF--IDF + Logistic Reg. & 1.000 & 1.000 & .583 & .562 \\
+\bottomrule
+\end{tabular}
+\end{table}
+Table~\ref{tab:results} records executed predictions on synthetic-only data. The baseline made three errors on the original holdout; both learned models made none. Under the distinct challenge wording, the three approaches correctly labeled 36, 36, and 35 of 60 questions. One Logistic Regression failure was ``Where do I appeal a grade that seems wrong?'' (expected Academic; predicted Financial Aid). Another was ``I missed the add/drop cutoff; who handles an exception?'' (expected Academic; predicted Other). Predictions and labels are included with reproducible materials.
+\section{Discussion and Future Work}
+The 40--42 percentage-point decline in accuracy of the learned classifiers suggests substantial reliance on repeated phrasing and lexical associations rather than robust intent understanding. Thus, perfect original held-out scores cannot justify campus deployment. The challenge set was deliberately constructed to be difficult, not sampled randomly from students; its performance cannot be interpreted as a population estimate. Some examples span multiple offices, and the single-author labels are contestable. The small dataset, uncalibrated probabilities, lack of out-of-scope evaluation, and generic rather than verified campus offices further limit reliability. The demo's low-confidence flag is implemented but not validated as a safe triage rule. No real student records were collected. Next steps are a consented and appropriately reviewed human-data study, independent label adjudication, group-separated evaluation, calibrated abstention and out-of-scope handling, and verification of routing destinations. None of these extensions were tested in this study.
+\begin{thebibliography}{9}
+\bibitem{larson2019} Stefan Larson et al. 2019. An Evaluation Dataset for Intent Classification and Out-of-Scope Prediction. arXiv:1909.02027. \url{https://arxiv.org/abs/1909.02027}.
+\bibitem{joulin2017} Armand Joulin, Edouard Grave, Piotr Bojanowski, and Tomas Mikolov. 2017. Bag of Tricks for Efficient Text Classification. In \emph{Proceedings of EACL}, 427--431. \url{https://aclanthology.org/E17-2068/}.
+\bibitem{zhang2015} Xiang Zhang, Junbo Zhao, and Yann LeCun. 2015. Character-level Convolutional Networks for Text Classification. In \emph{Advances in Neural Information Processing Systems 28}. \url{https://arxiv.org/abs/1509.01626}.
+\end{thebibliography}
+% Course-only supplement. OMIT from conference submission to preserve anonymity and page limit.
+\clearpage
+\onecolumn
+\section*{Supplemental Page: COMP 365 Final Submission Links}
+\textbf{Recorded demo and paper review:} \emph{TO BE ADDED BY STUDENT --- record screen and paste publicly accessible URL here.}\\[8pt]
+\textbf{Reproducible source code and data:} \emph{TO BE ADDED BY STUDENT --- publish project files to an accessible GitHub repository and paste URL here.}\\[8pt]
+\textbf{Live app (optional):} \emph{TO BE ADDED BY STUDENT --- deploy Gradio to a publicly accessible host and paste URL here.}\\[8pt]
+\textbf{Overleaf project:} \emph{TO BE SHARED DIRECTLY WITH DR. POPE AND THE TAS.}\\[8pt]
+\textbf{Reproduction instructions:} Install the versions in \texttt{requirements.txt}, run \texttt{python build\_project.py}, \texttt{python evaluate.py}, then \texttt{python app.py}. The README explains the dataset provenance and limitations. Verify all published links in an incognito browser before submission.\\[8pt]
+\textbf{Research integrity note:} This artifact includes newly generated synthetic data; it does not recreate or claim measurements from the earlier checkpoint notebook. The video, public links, instructor feedback, and Overleaf sharing require student action and are not yet completed.
+\end{document}

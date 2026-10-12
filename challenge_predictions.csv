@@ -1,0 +1,61 @@
+message,expected,challenge_type,keyword,naive_bayes,logistic_regression
+yo my advisor ghosted me how do i pick classes for next sem,Academic,slang,Academic,Academic,Academic
+im tryna switch from bio to comp sci who signs off,Academic,slang,Other,Technology,Technology
+Can a C-minus count toward my degree audit?,Academic,unseen,Academic,Academic,Academic
+I missed the add/drop cutoff; who handles an exception?,Academic,unseen,Other,Other,Other
+Where do I appeal a grade that seems wrong?,Academic,unseen,Academic,Financial Aid,Financial Aid
+Which prereqs do I need before capstone?,Academic,unseen,Other,Other,Other
+registration says hold but I already met my adviser,Academic,ambiguous,Other,Academic,Academic
+Can I enroll in two sections at the same time?,Academic,unseen,Other,Housing/Facilities,Housing/Facilities
+How many credits left til I graduate fr,Academic,slang,Other,Academic,Technology
+Need signoff for a course substitution ASAP,Academic,unseen,Academic,Technology,Technology
+My timetable has a class clash; can somebody fix it?,Academic,unseen,Academic,Housing/Facilities,Housing/Facilities
+Do I talk to someone about changing my program of study,Academic,unseen,Other,Academic,Academic
+wifi keeps kickin me off in the library,Technology,slang,Technology,Housing/Facilities,Housing/Facilities
+cant get into my account even after password reset,Technology,unseen,Technology,Technology,Technology
+2fa code never comes through to my phone,Technology,unseen,Other,Housing/Facilities,Housing/Facilities
+my school mail keeps bouncing messages back,Technology,unseen,Other,Financial Aid,Financial Aid
+bruh the campus app keeps crashing at sign in,Technology,slang,Other,Housing/Facilities,Housing/Facilities
+The lecture site freezes whenever I submit a file,Technology,unseen,Other,Technology,Technology
+is there someone who can fix a broken laptop loaner,Technology,unseen,Technology,Housing/Facilities,Housing/Facilities
+I cannot connect my tablet to eduroam,Technology,unseen,Other,Technology,Technology
+printer takes my money but wont print anything,Technology,unseen,Technology,Financial Aid,Financial Aid
+the online portal just spins and never loads,Technology,unseen,Technology,Technology,Technology
+My transcript PDF cannot download from the student system,Technology,ambiguous,Academic,Technology,Technology
+I got locked out of the lab workstation,Technology,unseen,Other,Technology,Technology
+my pell disappeared off my bill what happened,Financial Aid,slang,Other,Financial Aid,Financial Aid
+fafsa got processed but my award is still zero,Financial Aid,unseen,Financial Aid,Financial Aid,Financial Aid
+Who fixes an incorrect aid package for this term?,Financial Aid,unseen,Financial Aid,Financial Aid,Financial Aid
+I owe a balance after my grants were posted,Financial Aid,unseen,Financial Aid,Financial Aid,Financial Aid
+Why does my loan say pending disbursement,Financial Aid,unseen,Financial Aid,Financial Aid,Financial Aid
+can i appeal my aid bc my family income dropped,Financial Aid,unseen,Financial Aid,Financial Aid,Financial Aid
+Scholarship was approved but the charges remain,Financial Aid,unseen,Financial Aid,Financial Aid,Financial Aid
+I need emergency funding to stay enrolled,Financial Aid,unseen,Financial Aid,Financial Aid,Financial Aid
+When will my leftover tuition money be returned,Financial Aid,unseen,Financial Aid,Financial Aid,Financial Aid
+my workstudy earnings dont match what i was told,Financial Aid,unseen,Other,Financial Aid,Financial Aid
+my housing bill increased; can more aid cover it,Financial Aid,ambiguous,Financial Aid,Financial Aid,Financial Aid
+who handles missing outside scholarship checks,Financial Aid,unseen,Financial Aid,Other,Other
+there is water coming through my ceiling rn,Housing/Facilities,slang,Other,Financial Aid,Financial Aid
+the heater in our suite broke again,Housing/Facilities,unseen,Other,Housing/Facilities,Housing/Facilities
+my roommate moved out can i request a room swap,Housing/Facilities,unseen,Housing/Facilities,Housing/Facilities,Housing/Facilities
+the laundry machines on floor 4 ate my quarters,Housing/Facilities,unseen,Other,Other,Other
+There is a smell coming from the bathroom vent,Housing/Facilities,unseen,Other,Housing/Facilities,Housing/Facilities
+Can someone repair the door lock in my hall?,Housing/Facilities,unseen,Other,Housing/Facilities,Housing/Facilities
+our elevator has been out since friday,Housing/Facilities,unseen,Housing/Facilities,Housing/Facilities,Housing/Facilities
+there is a roach problem in the residence hall,Housing/Facilities,unseen,Housing/Facilities,Housing/Facilities,Housing/Facilities
+How do I report a flooded stairwell,Housing/Facilities,unseen,Other,Housing/Facilities,Housing/Facilities
+Need to move halls because of a broken window,Housing/Facilities,unseen,Housing/Facilities,Housing/Facilities,Housing/Facilities
+I need wifi fixed in my dorm room,Housing/Facilities,ambiguous,Technology,Housing/Facilities,Housing/Facilities
+room key stopped opening my building,Housing/Facilities,unseen,Other,Housing/Facilities,Housing/Facilities
+where do i pick up a replacement student id,Other,unseen,Other,Financial Aid,Financial Aid
+who approves a new student club,Other,unseen,Other,Other,Other
+is there a shuttle to the stadium tomorrow,Other,unseen,Other,Housing/Facilities,Housing/Facilities
+how do i register a campus event,Other,unseen,Other,Housing/Facilities,Housing/Facilities
+where can i report a lost wallet,Other,unseen,Other,Other,Other
+what hours is the dining hall serving breakfast,Other,unseen,Other,Housing/Facilities,Housing/Facilities
+can i reserve a room for a student organization,Other,unseen,Other,Technology,Technology
+who gives permission for a bake sale outside,Other,unseen,Other,Technology,Technology
+anyone know where to get a parking permit,Other,slang,Other,Other,Other
+how do i join the student government,Other,unseen,Other,Technology,Technology
+Need directions to the wellness center,Other,unseen,Other,Housing/Facilities,Housing/Facilities
+Does the school have volunteer opportunities this week,Other,unseen,Other,Other,Other
